@@ -39,7 +39,6 @@ main {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 10px;
-    animation-play-state: running;
     transform: rotate(45deg);
     visibility: visible;
     z-index: 999;
@@ -49,9 +48,11 @@ main {
     --c:red;
     background-color: var(--c);
     position: relative;
+    animation-play-state: 'running';
     transform: rotate(0);
     animation: blinking 2s linear infinite;
     animation-delay: var(--d);
+    visibility: visible;
 }
 .loading span::before{
     color: #fff;

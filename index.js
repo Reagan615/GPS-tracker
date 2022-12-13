@@ -90,10 +90,10 @@ function onSuccess(position) {
     let longitude = position.coords.longitude;
     let latitude = position.coords.latitude;
     map.setCenter([longitude, latitude]);
-    const marker1 = new mapboxgl.Marker().setLngLat([-97.1955112, 49.8164595]).addTo(map);
+    /* const marker1 = new mapboxgl.Marker().setLngLat([-97.1955112, 49.8164595]).addTo(map);
     const marker2 = new mapboxgl.Marker().setLngLat([-97.196208, 49.816715]).addTo(map);
     const marker3 = new mapboxgl.Marker().setLngLat([-97.1881982, 49.8118703]).addTo(map);
-    const marker4 = new mapboxgl.Marker().setLngLat([-97.1863782, 49.8139344]).addTo(map);
+    const marker4 = new mapboxgl.Marker().setLngLat([-97.1863782, 49.8139344]).addTo(map); */
     const marker5 = new mapboxgl.Marker().setLngLat([longitude, latitude]).addTo(map);
     map.setZoom(15);
     const popup = new mapboxgl.Popup({ offset: 25 }).setText(
