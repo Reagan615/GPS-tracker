@@ -1,0 +1,95 @@
+:root {
+    --app-red: #ff3c57;
+    --app-green: #33ab4e;
+    --app-purple: #833cff;
+    --app-orange: #ff833c;
+    --app-blue: #3c57ff;
+    --app-blue-hover: #364ee6;
+    --app-bg-dark: #1a1d28;
+}
+
+main {
+    min-width: 100%;
+    height: 100vh;
+    /* height: cal(var(--vh, 1vh) * 100); */
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+    background-color: var(--app-bg-dark);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    background-color: var(--app-bg-dark);
+    display: grid;
+    place-items: center;
+    z-index: 555;
+}
+
+.overlay .loading{
+    width: 100px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    animation-play-state: running;
+    transform: rotate(45deg);
+    visibility: visible;
+    z-index: 999;
+}
+
+.loading span{
+    --c:red;
+    background-color: var(--c);
+    position: relative;
+    transform: rotate(0);
+    animation: blinking 2s linear infinite;
+    animation-delay: var(--d);
+}
+.loading span::before{
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.loading span:nth-child(7){
+    --c:#f15a5a;
+    --d:0s;
+}
+.loading span:nth-child(4),
+.loading span:nth-child(8){
+    --c:#f0c419;
+    --d:0.2s;
+}
+.loading span:nth-child(1),
+.loading span:nth-child(5),
+.loading span:nth-child(9){
+    --c:#4eba6f;
+    --d:0.4s;
+}
+.loading span:nth-child(2),
+.loading span:nth-child(6){
+    --c:#2d95bf;
+    --d:0.6s;
+}
+.loading span:nth-child(3){
+    --c:#955ba5;
+    --d:0.8s;
+}
+
+@keyframes blinking{
+    0%,100%{
+        transform: scale(0);
+    }
+    40%,80%{
+        transform: scale(1);
+    }
+}
+
